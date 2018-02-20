@@ -20,11 +20,13 @@ public class SchoolController {
 
 		int num = 0;
 		while (true) {
+			System.out.println("=============");
 			System.out.println("1. 학 생  등 록 ");
 			System.out.println("2. 성 적  입 력 ");
 			System.out.println("3. 성 적  조 회 ");
 			System.out.println("4. 전 체  조 회 ");
 			System.out.println("5. 프로그램종료 ");
+			System.out.println("=============");
 
 			System.out.println("번호를 입력하세요. ");
 			num = sc.nextInt();
@@ -36,9 +38,11 @@ public class SchoolController {
 				break;
 			case 2:
 				System.out.println("성적 입력을 선택하셨습니다. ");
+				service.addPoint(student);
 				break;
 			case 3:
 				System.out.println("성적 조회를 선택하셨습니다. ");
+				studentView.pointView(student);
 				break;
 			case 4:
 				System.out.println("전체 조회를 선택하셨습니다. ");
