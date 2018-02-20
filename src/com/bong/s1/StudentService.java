@@ -14,7 +14,6 @@ public class StudentService {
 	
 	public Student[] addStudent() {
 		Scanner sc = new Scanner(System.in);
-		int check_number;
 		
 		System.out.println("학생의 수를 입력하세요. ");
 		int number = sc.nextInt();
@@ -27,31 +26,16 @@ public class StudentService {
 			student1.name = sc.next();
 			
 			System.out.println("학생의 번호를 입력하세요.");
-<<<<<<< HEAD
+
 			student1.num = sc.nextInt();
 
 			stu[i] = student1;
-=======
-			check_number = sc.nextInt();
-			
-			/*for(int j = 1; j < number; j++) {
-				Student student3 = new Student();
-				stu[j-1] = student3;
-				if(check_number == stu[j-1].num) {
-					System.out.println("같은 번호가 존재합니다. 다른번호를 입력해주세요. ");
-					check_number = sc.nextInt();
-					j = 0;
-				}
-			}*/
-			student2.num = check_number;
-			stu[i] = student2;
->>>>>>> parent of f824bef... SchoolInformation
 		}
 		return stu;
 	}
 	
 	// 메서드명 addPoint
-	public Student[] addPoint(Student[] stu) {
+	public void addPoint(Student[] stu) {
 		Scanner sc = new Scanner(System.in);
 		
 		for(int i = 0; i < stu.length; i++) {
@@ -75,7 +59,32 @@ public class StudentService {
 			//stu[i] = student2; // 마찬가지로 새롭게 입력받은게 아니므로
 		}
 		
-		return stu;
+		
+	}
+	
+	// search 메서드 명
+	// 번호를 입력 받아서 학생 한명을 찾아서
+	// 해당 출력은 StudentView Class의 viewStudent 메서드에서 출력
+	
+	public int search(Student[] stu) {
+		Scanner sc = new Scanner(System.in);
+		
+		boolean check = true;
+		System.out.println("조회할 학생의 번호를 입력하세요. ");
+		int num = sc.nextInt();
+		
+		for(int i = 0; i < stu.length; i++) {
+			if(stu[i].num == num) {
+				System.out.println(stu[i].num);
+				check = !check;
+			}
+			
+			System.out.println(stu[i].num);
+		}
+		if(check) {
+			System.out.println("해당 번호의 학생이 없습니다. ");
+		}
+		return num;
 	}
 	
 }

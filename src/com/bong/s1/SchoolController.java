@@ -42,7 +42,11 @@ public class SchoolController {
 				break;
 			case 3:
 				System.out.println("성적 조회를 선택하셨습니다. ");
-				studentView.pointView(student);
+				int search_num = service.search(student);
+				if(search_num > student.length) {//  
+					break;
+				}
+				studentView.viewStudent(student, search_num);
 				break;
 			case 4:
 				System.out.println("전체 조회를 선택하셨습니다. ");
