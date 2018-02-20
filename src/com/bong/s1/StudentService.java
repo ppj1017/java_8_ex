@@ -14,7 +14,6 @@ public class StudentService {
 	
 	public Student[] addStudent() {
 		Scanner sc = new Scanner(System.in);
-		int check_number;
 		
 		System.out.println("학생의 수를 입력하세요. ");
 		int number = sc.nextInt();
@@ -27,18 +26,8 @@ public class StudentService {
 			student2.name = sc.next();
 			
 			System.out.println("학생의 번호를 입력하세요.");
-			check_number = sc.nextInt();
-			
-			/*for(int j = 1; j < number; j++) {
-				Student student3 = new Student();
-				stu[j-1] = student3;
-				if(check_number == stu[j-1].num) {
-					System.out.println("같은 번호가 존재합니다. 다른번호를 입력해주세요. ");
-					check_number = sc.nextInt();
-					j = 0;
-				}
-			}*/
-			student2.num = check_number;
+			student2.num = sc.nextInt();
+
 			stu[i] = student2;
 		}
 		return stu;
