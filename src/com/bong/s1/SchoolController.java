@@ -14,6 +14,9 @@ public class SchoolController {
 
 	public void start() {
 		Scanner sc = new Scanner(System.in);
+		Student[] student = null;
+		StudentService service = new StudentService();
+		StudentView studentView = new StudentView();
 
 		int num = 0;
 		while (true) {
@@ -29,6 +32,7 @@ public class SchoolController {
 			switch (num) {
 			case 1:
 				System.out.println("학생 등록을 선택하셨습니다. ");
+				student = service.addStudent();
 				break;
 			case 2:
 				System.out.println("성적 입력을 선택하셨습니다. ");
@@ -38,6 +42,7 @@ public class SchoolController {
 				break;
 			case 4:
 				System.out.println("전체 조회를 선택하셨습니다. ");
+				studentView.view(student);
 				break;
 			case 5:
 				System.out.println("프로그램 종료를 선택하셨습니다. ");
