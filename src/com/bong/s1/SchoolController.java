@@ -43,7 +43,7 @@ public class SchoolController {
 			case 3:
 				System.out.println("성적 조회를 선택하셨습니다. ");
 				int search_num = service.search(student);
-				if(search_num > student.length) {//  
+				if(search_num == -1) {//  
 					break;
 				}
 				studentView.viewStudent(student, search_num);

@@ -69,22 +69,17 @@ public class StudentService {
 	public int search(Student[] stu) {
 		Scanner sc = new Scanner(System.in);
 		
-		boolean check = true;
+		
 		System.out.println("조회할 학생의 번호를 입력하세요. ");
 		int num = sc.nextInt();
 		
 		for(int i = 0; i < stu.length; i++) {
 			if(stu[i].num == num) {
-				System.out.println(stu[i].num);
-				check = !check;
+				return num;
 			}
-			
-			System.out.println(stu[i].num);
 		}
-		if(check) {
-			System.out.println("해당 번호의 학생이 없습니다. ");
-		}
-		return num;
+		System.out.println("해당 번호의 학생이 없습니다. ");
+		return -1;
 	}
 	
 }
