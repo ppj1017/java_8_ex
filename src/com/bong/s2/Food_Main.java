@@ -3,25 +3,21 @@ package com.bong.s2;
 public class Food_Main {
 
 	public static void main(String[] args) {
-		Food_Pasta pasta = new Food_Pasta();
-		pasta.name = "크림파스타";
-		pasta.price = 15000;
+		Shef_Source shef = new Shef_Source();
+		Food_Source source = shef.makeSource(3);
+		Shef_Steak ss = new Shef_Steak();
+		Food_Steak fs = new Food_Steak();
 		
-		System.out.println(pasta.source);
+		if (source != null) {
+			System.out.println(source.oil_name);
+			System.out.println(source.spice_name);
+		}
 		
-		pasta.source = new Food_Source();
-		
-		System.out.println(pasta.source.oil_name);
-		
-		pasta.source.oil_name = "olive";
-		pasta.source.spice_name = "hub";
-
-		Food_Pasta pasta2 = new Food_Pasta();
-		
-		System.out.println(pasta2.source.oil_name);
-		
-		// 소스 : 오일, 향신료
-
+		fs = ss.makeSteak(2);
+		System.out.println(fs.name);
+		System.out.println(fs.price);
+		System.out.println(fs.source.oil_name);
+		System.out.println(fs.source.spice_name);
 	}
 
 }
