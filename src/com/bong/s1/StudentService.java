@@ -12,6 +12,15 @@ public class StudentService {
 	// 번호입력
 	// 메인의 1번
 	
+	/*
+	 * Scanner sc;
+	 * 
+	 * public StudentService(){
+	 * 		sc = new Scanner(System.in);
+	 * }
+	 * 
+	 */
+	
 	public Student[] addStudent() {
 		Scanner sc = new Scanner(System.in);
 		
@@ -80,6 +89,17 @@ public class StudentService {
 		}
 		System.out.println("해당 번호의 학생이 없습니다. ");
 		return -1;
+		
+		/*
+		 * Student student = null;
+		 * for(int i = 0; i < stu.length; i++){
+		 * 		if(num == students[i].num){
+		 * 			student = students[i];
+		 * 			break;
+		 * 		}
+		 * }
+		 * return students;
+		 */
 	}
 	
 }

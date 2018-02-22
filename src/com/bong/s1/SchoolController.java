@@ -41,12 +41,17 @@ public class SchoolController {
 				service.addPoint(student);
 				break;
 			case 3:
-				System.out.println("성적 조회를 선택하셨습니다. ");
-				int search_num = service.search(student);
-				if(search_num == -1) {//  
-					break;
+				if (student != null) {
+					System.out.println("성적 조회를 선택하셨습니다. ");
+					int search_num = service.search(student);
+					if (search_num == -1) {
+						break;
+					}
+					studentView.viewStudent(student, search_num);
 				}
-				studentView.viewStudent(student, search_num);
+				else {
+					System.out.println("학생을 먼저 입력하세요. ");
+				}
 				break;
 			case 4:
 				System.out.println("전체 조회를 선택하셨습니다. ");
